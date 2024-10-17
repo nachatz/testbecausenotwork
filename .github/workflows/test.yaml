@@ -1,0 +1,23 @@
+name: Validate updated correlations crud
+
+on:
+  pull_request:
+      types:
+          - closed
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+  PAT_ORG_TOKEN: ${{ secrets.PAT_ORG_TOKEN }} 
+
+jobs:
+  build:
+    name: Validate correlations crud
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: echo
+      run: |
+        echo hi
